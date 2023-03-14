@@ -71,7 +71,7 @@ describe("SignUpController", () => {
 
     const httpResponse = sut.handle(httpRequest);
 
-    expect(httpResponse.statusCode).toBe(400);
+    expect(httpResponse.status_code).toBe(400);
     expect(httpResponse.body).toEqual(new MissingParamError("name"));
   });
 
@@ -87,7 +87,7 @@ describe("SignUpController", () => {
 
     const httpResponse = sut.handle(httpRequest);
 
-    expect(httpResponse.statusCode).toBe(400);
+    expect(httpResponse.status_code).toBe(400);
     expect(httpResponse.body).toEqual(new MissingParamError("email"));
   });
 
@@ -103,7 +103,7 @@ describe("SignUpController", () => {
 
     const httpResponse = sut.handle(httpRequest);
 
-    expect(httpResponse.statusCode).toBe(400);
+    expect(httpResponse.status_code).toBe(400);
     expect(httpResponse.body).toEqual(new MissingParamError("password"));
   });
 
@@ -119,7 +119,7 @@ describe("SignUpController", () => {
 
     const httpResponse = sut.handle(httpRequest);
 
-    expect(httpResponse.statusCode).toBe(400);
+    expect(httpResponse.status_code).toBe(400);
     expect(httpResponse.body).toEqual(
       new MissingParamError("password_confirmation")
     );
@@ -138,7 +138,7 @@ describe("SignUpController", () => {
 
     const httpResponse = sut.handle(httpRequest);
 
-    expect(httpResponse.statusCode).toBe(400);
+    expect(httpResponse.status_code).toBe(400);
     expect(httpResponse.body).toEqual(
       new InvalidParamError("password_confirmation")
     );
@@ -158,7 +158,7 @@ describe("SignUpController", () => {
 
     const httpResponse = sut.handle(httpRequest);
 
-    expect(httpResponse.statusCode).toBe(400);
+    expect(httpResponse.status_code).toBe(400);
     expect(httpResponse.body).toEqual(new InvalidParamError("email"));
   });
 
@@ -196,7 +196,7 @@ describe("SignUpController", () => {
 
     const httpResponse = sut.handle(httpRequest);
 
-    expect(httpResponse.statusCode).toBe(500);
+    expect(httpResponse.status_code).toBe(500);
     expect(httpResponse.body).toEqual(new ServerError());
   });
 
@@ -217,7 +217,7 @@ describe("SignUpController", () => {
 
     const httpResponse = sut.handle(httpRequest);
 
-    expect(httpResponse.statusCode).toBe(500);
+    expect(httpResponse.status_code).toBe(500);
     expect(httpResponse.body).toEqual(new ServerError());
   });
 
@@ -255,7 +255,7 @@ describe("SignUpController", () => {
 
     const httpResponse = sut.handle(httpRequest);
 
-    expect(httpResponse.statusCode).toBe(200);
+    expect(httpResponse.status_code).toBe(200);
     expect(httpResponse.body).toEqual({
       id: "valid_id",
       name: "valid_name",
